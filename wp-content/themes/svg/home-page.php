@@ -16,10 +16,28 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div id="hometop"> 
-				<div id="loginbox"></div>
+				
+					<?php 
+					if (!is_user_logged_in()) {
+						echo "<div id='loginbox'>";
+							wp_login_form(); ?>
+							<small class="i white">Not a member?<a href="<?php home_url(); ?>/wp-login.php?action=register">Register</a></small>
+						</div>
+					<?php } else {
+						global $current_user;
+						get_currentuserinfo();
+
+						echo "<h2 class='white BlackJack user-label'>Welcome, $current_user->user_firstname</h2>";
+
+					}?>
+					
+					
+				
 			</div>
 			<div id="Elementbox">
-				<?php if ( dynamic_sidebar('Home Page Content') ) : else : endif; ?>
+				<?php 
+				if ( dynamic_sidebar('Home Page Content') ) : else : endif; 
+				?>
 			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->

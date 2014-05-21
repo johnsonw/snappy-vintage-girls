@@ -15,8 +15,6 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-<link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit.css">
-
 <?php wp_head(); ?>
 </head>
 
@@ -36,6 +34,9 @@
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle"><?php _e( 'Primary Menu', 'snappy-vintage-girls' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			<p class="alignright searchbar">
+				<input type="text" name="searchbar" id="searchbar" placeholder="Search..."/>
+			</p>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
